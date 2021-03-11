@@ -26,7 +26,7 @@ export default {
       camera.updateProjectionMatrix();
     });
 
-    const box = new THREE.BoxGeometry(1, 1, 1.5);
+    const box = new THREE.BoxGeometry(1, 1, 1.5, 10, 10, 10);
     const material = new THREE.MeshLambertMaterial({ color: "#fff" });
     //
     const positions = {
@@ -58,7 +58,7 @@ export default {
       mesh.position.y = positions.y[i];
       mesh.position.z = positions.z[i];
       var tween = new TWEEN.Tween(mesh.position)
-        .to({ y: positions.y[i] + 0.05 }, 750)
+        .to({ y: positions.y[i] + 0.1 }, 750)
         .repeat(Infinity)
         .delay(positions.delay[i])
         .yoyo(true)
